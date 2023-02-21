@@ -1,3 +1,10 @@
+#[link(name = "hello", kind = "raw-dylib")]
+extern {
+    fn add(left: usize, right: usize) -> usize ;
+}
+
 fn main() {
-    hello::add(2,2);
+    unsafe {
+        add(2,2);
+    }
 }
